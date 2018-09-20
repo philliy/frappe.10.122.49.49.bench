@@ -1,0 +1,7 @@
+frappe
+erpnext
+erpnext_demo
+ni_dark_theme
+business_theme
+bdtheme
+nilighttheme

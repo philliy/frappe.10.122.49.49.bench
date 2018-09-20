@@ -1,0 +1,49 @@
+{% extends "templates/web.html" %}
+
+{% block style %}
+<style>
+	{% include "templates/includes/login/login.css" %}
+</style>
+{% endblock %}
+
+{% block page_content %}
+<!-- {{ for_test }} -->
+<section class='for-login'>
+	<div class="login-content page-card" style="margin-top: 30px;">
+		<div align="center">
+			<img src="/assets/erpnext/images/erp-icon.svg" width="200" height="200" align="center"/>
+		</div>
+		<form class="form-signin form-login" role="form">
+			<div class="page-card-head">
+				<span class="indicator blue" data-text="{{ _("Sign In") }}"></span>
+			</div>
+
+			<input type="text" id="login_email"
+				class="form-control" placeholder="{{ login_name_placeholder  }}"
+				required autofocus>
+
+
+			<input type="password" id="login_password"
+				class="form-control" placeholder="{{ _('Password') }}" required>
+
+			<button class="btn btn-sm btn-primary btn-block btn-login" type="submit">
+				{{ _("Sign in") }}</button>
+
+			{% if ldap_settings.enabled %}
+			<button class="btn btn-sm btn-default btn-block btn-login btn-ldap-login">
+				{{ _("Login with LDAP") }}</button>
+			{% endif %}
+		</form>
+	</div>
+	
+</section>
+
+
+
+{% endblock %}
+
+{% block script %}
+	<script>{% include "templates/includes/login/login.js" %}</script>
+{% endblock %}
+
+{% block sidebar %}{% endblock %}
